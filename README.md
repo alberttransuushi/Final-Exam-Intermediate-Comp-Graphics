@@ -5,7 +5,7 @@
 WASD to move around, mouse to look around.
 E to disable pixelation, R to enable it
 G to disable bloom, F to enable it
-N to make fast moving fire, M to enable it.
+N to make fast moving fire, M to make slow moving fire.
 
 #Shader Explinations:
 
