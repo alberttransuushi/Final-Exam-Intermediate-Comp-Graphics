@@ -1,9 +1,15 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class FlyCamera : MonoBehaviour
 {
 
+    private void Start()
+    {
+        Camera.main.GetComponent<BloomEffect>().enabled = true;
+        Camera.main.GetComponent<Pixelation>().enabled = true;
+    }
 
 
     float mainSpeed = 50.0f; //regular speed
@@ -75,6 +81,22 @@ public class FlyCamera : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             p_Velocity += new Vector3(1, 0, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Camera.main.GetComponent<BloomEffect>().enabled = false;
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Camera.main.GetComponent<BloomEffect>().enabled = true;
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Camera.main.GetComponent<Pixelation>().enabled = false;
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Camera.main.GetComponent<Pixelation>().enabled = true;
         }
         return p_Velocity;
     }

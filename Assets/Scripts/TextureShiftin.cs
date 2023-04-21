@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TextureShiftin : MonoBehaviour
 {
-    // Code created by my partner Ryan for testing
+   
     Material material;
     float timer;
     [SerializeField] float cycleTime = 1;
@@ -33,7 +33,17 @@ public class TextureShiftin : MonoBehaviour
         {
             shift.y = timer / cycleTime;
         }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            cycleTime = 20;
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            cycleTime = 1;
+        }
         material.SetTextureOffset(texName, shift);
+       
+            
 
     }
 }
