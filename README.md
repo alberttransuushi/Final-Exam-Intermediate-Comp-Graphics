@@ -1,22 +1,24 @@
 # Final Exam Intermediate Comp Graphics
  Final Exam for intermediate computer graphics at OTU
 
-#Controls:
+# Controls:
 WASD to move around, mouse to look around.
 E to disable pixelation, R to enable it
 G to disable bloom, F to enable it
 N to make fast moving fire, M to make slow moving fire.
 
-#Scene Explination:
+# Scene Explination:
 A simple scene was based on 
+
 ![image](https://user-images.githubusercontent.com/98855552/233709532-da597683-5a80-4793-9e2a-65a10deb9139.png)
 
 My scene look likes the following:
+
 ![image](https://user-images.githubusercontent.com/98855552/233709611-4f891547-4def-45da-ba9b-5292d03e1084.png)
 
 
-#Shader Explinations:
-
+# Shader Explinations:
+ 
 Bloom: Bloom is done by progressivly downsampling and upsampling a the textures seen by our camera as a post processing effect. Essentially we progressively downsample and upsample, as well as box sample the textures, then apply them over the original image with a render texture, this render texture is effected by the light of our scene. We also add itterations and soft and hard threshholds to help add control, we also add a color variable to change the color of the sampled and blurred render texture, which can help to add some unique feel to the game. This was implemented in order to add a light to the lava/fire of the object. 
 
 Pixelation: Pixelation, at least in the context of this project, is essentially the process of making our screen more pixelated, this done so that the project can have a more retro style and feel. The way this is done is that we change our aspect ratio to increase the density of the pixels within our screen. This allows us to have the pixelated look and feel to our game. A C# script then applies this to our camera which we then use to also correct for the aspect ratio changes, essentially making sure the width and height of our aspect ratio are set to be the correct width and height respectively. 
